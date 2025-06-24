@@ -1,0 +1,394 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "login": "admin",
+      "nome": "Administrador",
+      "email": "admin@poneglyph.com",
+      "senha": "admin",
+      "tipo": "admin"
+    },
+    {
+      "id": "05d9",
+      "login": "aa",
+      "nome": "aa",
+      "email": "aa@hotmail.com",
+      "senha": "aa",
+      "tipo": "comum"
+    },
+    {
+      "id": "2b79",
+      "login": "ana",
+      "nome": "ana",
+      "email": "ana@ana",
+      "senha": "ana",
+      "tipo": "comum"
+    },
+    {
+      "id": "7288",
+      "login": "anaa",
+      "nome": "anaa",
+      "email": "anaa@ana",
+      "senha": "ana",
+      "tipo": "comum"
+    },
+    {
+      "id": "d6f8",
+      "login": "aaaa",
+      "nome": "aaaa",
+      "email": "aaaa@a",
+      "senha": "aaaa",
+      "tipo": "comum"
+    }
+  ],
+  "noticias": [
+    {
+      "id": "1",
+      "titulo": "Eclipse solar total emociona espectadores nos EUA e México",
+      "autor": "Nico Robin",
+      "data": "2025-04-08",
+      "imagem": "assets/img/eclipse.jpg",
+      "descricao": "Cidades como Austin e Mazatlán registraram grande fluxo de turistas para observar o eclipse solar total.",
+      "conteudo": "Milhares de pessoas se reuniram com óculos especiais para acompanhar o fenômeno. A NASA fez transmissão ao vivo e a próxima oportunidade será apenas em 2044.",
+      "destaque": true,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/eclipse1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/eclipse2.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/eclipse3.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/eclipse4.jpg",
+          "desc": " "
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "titulo": "Enchentes atingem mais de 40 cidades no Rio Grande do Sul",
+      "autor": "Katarina Ducoteau",
+      "data": "17/04/2025",
+      "imagem": "assets/img/enchentes-rs.jpg",
+      "descricao": "Chuvas intensas causam alagamentos e desabrigados em Santa Maria e Lajeado.",
+      "conteudo": "O governo estadual decretou estado de emergência em diversas regiões. Equipes de resgate atuam com apoio da Defesa Civil.",
+      "destaque": true,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/enchentes-rs1.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/enchentes-rs2.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/enchentes-rs3.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/enchentes-rs4.jpg",
+          "desc": " "
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "titulo": "Belo Horizonte recebe maior evento de tecnologia do Sudeste",
+      "autor": "Izabela Vitoria",
+      "data": "12/04/2025",
+      "imagem": "assets/img/bh-tech.jpg",
+      "descricao": "BH Tech Summit reúne startups e gigantes da tecnologia no Expominas.",
+      "conteudo": "O evento contou com painéis sobre inteligência artificial, segurança digital e futuro da mobilidade urbana.",
+      "destaque": true,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/bh-tech1.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/bh-tech2.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/bh-tech3.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/bh-tech4.jpg",
+          "desc": " "
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "titulo": "Salvador celebra o mês dos povos indígenas com festival cultural",
+      "autor": "Ana Gabriella",
+      "data": "14/04/2025",
+      "imagem": "assets/img/festival-indigena.jpg",
+      "descricao": "Eventos no Pelourinho promovem cultura e resistência indígena.",
+      "conteudo": "Com exposições, danças e rodas de conversa, o festival busca dar visibilidade às etnias do Nordeste brasileiro.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/festival-indigena1.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/festival-indigena2.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/festival-indigena3.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/festival-indigena4.jpg",
+          "desc": " "
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "titulo": "Paris intensifica preparativos para as Olimpíadas de 2024",
+      "autor": "Roberto Alencar",
+      "data": "10/04/2025",
+      "imagem": "assets/img/olimpiadas-paris.jpg",
+      "descricao": "Cidade finaliza obras e realiza testes de segurança para os jogos.",
+      "conteudo": "Com a cerimônia de abertura se aproximando, autoridades francesas prometem o 'evento mais sustentável da história'.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/olimpiadas-paris1.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/olimpiadas-paris2.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/olimpiadas-paris3.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/olimpiadas-paris4.jpg",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "titulo": "Incêndio atinge parque nacional na Patagônia argentina",
+      "autor": "Barbara Polesca",
+      "data": "16/04/2025",
+      "imagem": "assets/img/incendio-patagonia.jpg",
+      "descricao": "Fogo se espalha na região de El Chaltén e preocupa ambientalistas.",
+      "conteudo": "Brigadistas enfrentam dificuldades por conta do vento forte. A causa do incêndio ainda está sob investigação.",
+      "destaque": false,
+      "favorito": true,
+      "fotos": [
+        {
+          "src": "assets/img/incendio-patagonia1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/incendio-patagonia2.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/incendio-patagonia3.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/incendio-patagonia3.jpg",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "titulo": "Recife inaugura novo centro de inovação urbana",
+      "autor": "Katara Watertribe",
+      "data": "13/04/2025",
+      "imagem": "assets/img/porto-digital.jpg",
+      "descricao": "Novo espaço no Porto Digital foca em soluções para cidades inteligentes.",
+      "conteudo": "O centro atuará como hub para projetos voltados à mobilidade, sustentabilidade e urbanismo digital.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/porto-digital1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/porto-digital2.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/porto-digital3.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/porto-digital4.jpg",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "titulo": "Japão testa trens-bala movidos a hidrogênio",
+      "autor": "Connie Maheswaran",
+      "data": "11/04/2025",
+      "imagem": "assets/img/trem-hidrogenio.jpg",
+      "descricao": "Tóquio testa modelo sustentável com emissão zero de poluentes.",
+      "conteudo": "O novo trem promete alta velocidade com baixíssimo impacto ambiental, reforçando os compromissos do Japão com energia limpa.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/trem-hidrogenio1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/trem-hidrogenio2.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/trem-hidrogenio3.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/trem-hidrogenio4.jpg",
+          "desc": " "
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "titulo": "Manaus lança programa de combate ao desmatamento urbano",
+      "autor": "Dio Brando",
+      "data": "18/04/2025",
+      "imagem": "assets/img/manaus-verde.jpg",
+      "descricao": "Prefeitura usa drones para proteger áreas verdes da cidade.",
+      "conteudo": "Com monitoramento em tempo real, a capital amazonense quer reduzir a perda de cobertura vegetal em regiões urbanas.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/manaus-verde1.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/manaus-verde2.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/manaus-verde3.jpg",
+          "desc": " "
+        },
+        {
+          "src": "assets/img/manaus-verde4.jpg",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "titulo": "SpaceX lança missão tripulada à Estação Espacial Internacional",
+      "autor": "Marcelo Peçanha",
+      "data": "22/04/2025",
+      "imagem": "assets/img/spacex.jpg",
+      "descricao": "A SpaceX, em parceria com a NASA, realizou com sucesso o lançamento da Crew-8 rumo à ISS.",
+      "conteudo": "O foguete Falcon 9 decolou do Centro Espacial Kennedy, levando quatro astronautas para uma missão de seis meses. A Crew-8 continuará pesquisas sobre microgravidade e tecnologia espacial.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/spacex1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/spacex2.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/spacex3.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/spacex4.jpg",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "titulo": "Brasil registra maior geração de energia solar da história",
+      "autor": "Akagami no Shanks",
+      "data": "18/04/2025",
+      "imagem": "assets/img/energia-solar.jpg",
+      "descricao": "O país bateu recorde histórico na produção de energia solar, representando 20% da matriz elétrica nacional.",
+      "conteudo": "Segundo a Associação Brasileira de Energia Solar Fotovoltaica (ABSOLAR), a expansão das usinas solares e a instalação de painéis residenciais impulsionaram o crescimento. A tendência é de alta até 2030.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/energia-solar1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/energia-solar2.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/energia-solar3.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/energia-solar4.jpg",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "titulo": "Maratona de Londres 2025 reúne mais de 50 mil corredores",
+      "autor": "Kaguya Shinomia",
+      "data": "21/04/2025",
+      "imagem": "assets/img/maratona-londres.jpg",
+      "descricao": "Evento tradicional contou com a participação de atletas profissionais e amadores de todo o mundo.",
+      "conteudo": "Com um percurso de 42,195 km, a Maratona de Londres emocionou público e corredores. O etíope Sisay Lemma venceu a prova masculina, enquanto a queniana Peres Jepchirchir levou o título feminino.",
+      "destaque": false,
+      "favorito": false,
+      "fotos": [
+        {
+          "src": "assets/img/maratona-londres1.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/maratona-londres2.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/maratona-londres3.jpg",
+          "desc": ""
+        },
+        {
+          "src": "assets/img/maratona-londres4.jpg",
+          "desc": ""
+        }
+      ]
+    }
+  ]
+}

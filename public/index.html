@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poneglyph News | Ecos do Passado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+
+</head>
+<body>
+<header class="py-4 shadow-lg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex flex-column align-items-start">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-feather-alt fa-2x me-3" style="color: var(--rosa-magenta);"></i>
+        <h1 class="m-0">Poneglyph News</h1>
+      </div>
+      <small class="fst-italic" style="color: var(--azul-pastel);">Relíquias do tempo, contadas hoje</small>
+    </div>
+ <div class="d-flex align-items-center">
+  <a href="favoritos.html" class="btn btn-outline-danger me-2">
+    <i class="fas fa-heart"></i> Favoritos
+  </a>
+  <div id="authButtons">
+    
+  </div>
+</div>
+  </div>
+</header>
+  <main class="container my-5">
+    <section class="mb-5">
+      <h2 class="mb-4"><i class="fas fa-compass me-2" style="color: var(--bronze);"></i>Destaques do Arquivo</h2>
+      <div id="carouselDestaques" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carousel-inner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <section>
+     <section>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="m-0"><i class="fas fa-map-marked-alt me-2" style="color: var(--verde-azulado);"></i>Últimas Decifrações</h2>
+    <div class="search-bar input-group" style="max-width: 300px;">
+      <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Buscar notícias...">
+      <button class="btn btn-primary btn-sm" type="button" id="searchButton">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="row g-4" id="lista-noticias"></div>
+  
+</section>
+          <div id="adminControls" class="admin-only" style="display: none;">
+  <a href="cadastro.html" class="btn btn-primary btn-sm mt-3">
+    <i class="fas fa-plus me-1"></i>Nova Notícia
+  </a>
+</div>
+  </section>
+      <section id="agenda" class="container my-5">
+              <h2 class="text-center mb-4">Agenda Arqueológica</h2>
+              <div id='calendario'></div>
+      </section>
+
+
+
+    </section>
+  </main>
+  <h2 class="mb-4"><i class="fas fa-compass me-2" style="color: var(--bronze);"></i>Informações do aluno</h2>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <a href="#">Sobre</a>
+          <p>Poneglyph News é um portal de notícias minimalista<br>
+            com a paleta de cores baseada na personagem da ficção <br>
+            Jinx e inspirado em uma importante região de uma renomada <br> 
+            obra japonesa (Ohara / One Piece).
+          </p>
+        </div>
+        
+        <div class="footer-right">
+          <a href="#">Autoria</a>
+          <p>Aluno: Felippe Salvo de Mendonça</p>
+          <p>Curso: Análise e Desenvolvimento de Sistemas</p>
+          <p>Matrícula: 894280</p>
+          <p>Turma: Noturno</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 - Ohara Research Collective</p>
+      </div>
+    </footer>
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/scripts/app.js"></script>
+  <script src="assets/scripts/login.js"></script>
+  <script src="assets/scripts/calendario.js"></script>
+</body>
+</html>

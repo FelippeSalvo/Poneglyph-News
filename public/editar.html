@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edição de Notícia | Poneglyph News</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="py-4 shadow-lg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex flex-column align-items-start">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-feather-alt fa-2x me-3" style="color: var(--rosa-magenta);"></i>
+        <a href="index.html" class="text-decoration-none me-3">
+            <h1 class="m-0" style="color: white;">Poneglyph News </h1>
+        </a>
+      </div>
+      <small class="fst-italic" style="color: var(--azul-pastel);">Relíquias do tempo, contadas hoje</small>
+    </div>
+ <div class="d-flex align-items-center">
+  <a href="favoritos.html" class="btn btn-outline-danger me-2">
+    <i class="fas fa-heart"></i> Favoritos
+  </a>
+  <div id="authButtons">
+    
+  </div>
+</div>
+  </div>
+</header>
+
+  <main class="container my-5">
+    <h2 class="mb-4" style="color: var(--azul-pastel);">
+      <i class="fas fa-pen-nib me-2" style="color: var(--rosa-magenta);"></i>
+      Edição de Notícia
+    </h2>
+    <form id="formCadastro" class="bg-dark p-4 rounded shadow">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" required />
+      </div>
+      <div class="mb-3">
+        <label for="autor" class="form-label">Autor</label>
+        <input type="text" class="form-control" id="autor" required />
+      </div>
+      <div class="mb-3">
+        <label for="data" class="form-label">Data</label>
+        <input type="date" class="form-control" id="data" required />
+      </div>
+      <div class="mb-3">
+        <label for="imagem" class="form-label">URL da Imagem Principal</label>
+        <input type="url" class="form-control" id="imagem" required />
+      </div>
+      <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" rows="2" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="conteudo" class="form-label">Conteúdo</label>
+        <textarea class="form-control" id="conteudo" rows="4" required></textarea>
+      </div>
+      
+      
+      <div class="mb-3">
+        <label class="form-label">Fotos Complementares</label>
+        <div id="containerImagensComplementares">
+          
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary mt-2" id="btnAdicionarImagem">
+          <i class="fas fa-plus"></i> Adicionar URL de Imagem
+        </button>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Editar Notícia</button>
+    </form>
+
+    <div class="mt-4">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fas fa-arrow-left me-2"></i>Voltar
+      </a>
+    </div>
+  </main>
+
+  <script>
+    const id = new URLSearchParams(window.location.search).get('id');
+
+    async function carregarNoticia() {
+      try {
+        const resposta = await fetch(`http://localhost:3000/noticias/${id}`);
+        const noticia = await resposta.json();
+
+         
+        document.getElementById('titulo').value = noticia.titulo;
+        document.getElementById('autor').value = noticia.autor;
+        document.getElementById('data').value = noticia.data;
+        document.getElementById('imagem').value = noticia.imagem;
+        document.getElementById('descricao').value = noticia.descricao;
+        document.getElementById('conteudo').value = noticia.conteudo;
+
+       
+        const container = document.getElementById('containerImagensComplementares');
+        if (noticia.fotos && noticia.fotos.length > 0) {
+          noticia.fotos.forEach(foto => {
+            const divImagem = document.createElement('div');
+            divImagem.className = 'd-flex align-items-center mb-2';
+            divImagem.innerHTML = `
+              <input type="url" class="form-control form-control-sm me-2" 
+                     value="${foto.src}" required>
+              <button type="button" class="btn btn-sm btn-outline-danger remover-imagem">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            `;
+            container.appendChild(divImagem);
+            
+            
+            divImagem.querySelector('.remover-imagem').addEventListener('click', function() {
+              container.removeChild(divImagem);
+            });
+          });
+        }
+      } catch (erro) {
+        console.error('Erro ao carregar notícia:', erro);
+        alert('Erro ao carregar notícia para edição');
+      }
+    }
+
+     
+    document.getElementById('btnAdicionarImagem').addEventListener('click', function() {
+      const container = document.getElementById('containerImagensComplementares');
+      const divImagem = document.createElement('div');
+      divImagem.className = 'd-flex align-items-center mb-2';
+      divImagem.innerHTML = `
+        <input type="url" class="form-control form-control-sm me-2" 
+               placeholder="URL da imagem complementar" required>
+        <button type="button" class="btn btn-sm btn-outline-danger remover-imagem">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      `;
+      container.appendChild(divImagem);
+      
+       
+      divImagem.querySelector('.remover-imagem').addEventListener('click', function() {
+        container.removeChild(divImagem);
+      });
+    });
+
+    
+    document.getElementById('formCadastro').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      
+      const fotos = [];
+      document.querySelectorAll('#containerImagensComplementares input').forEach(input => {
+        if (input.value.trim() !== '') {
+          fotos.push({
+            src: input.value.trim(),
+            desc: '' 
+          });
+        }
+      });
+
+      const noticiaAtualizada = {
+        titulo: document.getElementById('titulo').value,
+        autor: document.getElementById('autor').value,
+        data: document.getElementById('data').value,
+        imagem: document.getElementById('imagem').value,
+        descricao: document.getElementById('descricao').value,
+        conteudo: document.getElementById('conteudo').value,
+        fotos: fotos
+      };
+
+      try {
+        const response = await fetch(`http://localhost:3000/noticias/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(noticiaAtualizada)
+        });
+        
+        if (response.ok) {
+          alert('Notícia atualizada com sucesso!');
+          window.location.href = 'index.html';
+        } else {
+          throw new Error('Erro ao atualizar notícia');
+        }
+      } catch (erro) {
+        console.error('Erro:', erro);
+        alert('Erro ao atualizar notícia. Por favor, tente novamente.');
+      }
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', carregarNoticia);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/scripts/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro | Poneglyph News</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+ 
+  <header class="py-4 shadow-lg">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="text-decoration-none d-flex align-items-center">
+        <i class="fas fa-feather-alt fa-2x me-2" style="color: #c73e6b;"></i>
+        <h1 class="m-0 text-white">Poneglyph News</h1>
+      </a>
+    </div>
+  </header>
+
+  
+  <div class="pagina-autenticacao d-flex justify-content-center align-items-center">
+    <div class="form-box p-5 rounded-4 shadow-lg">
+      <h2 class="mb-4 text-center">
+        <i class="fas fa-user-plus me-2" style="color: #c73e6b;"></i>
+        <span style="color: white;">Cadastro</span>
+      </h2>
+
+      <form id="cadastroForm">
+        <div class="mb-3">
+          <label for="login" class="form-label">Login</label>
+          <input type="text" class="form-control" id="login" required />
+        </div>
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome Completo</label>
+          <input type="text" class="form-control" id="nome" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senha" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-3">Cadastrar</button>
+      </form>
+
+      <div class="text-center mt-4">
+        <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cadastroForm = document.getElementById('cadastroForm');
+  
+  if (cadastroForm) {
+    cadastroForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const login = document.getElementById('login').value;
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+      
+      if (!login || !nome || !email || !senha) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+    
+      fetch('http://localhost:3000/usuarios')
+        .then(response => response.json())
+        .then(usuarios => {
+          const usuarioExistente = usuarios.find(u => u.login === login || u.email === email);
+          
+          if (usuarioExistente) {
+            alert('Login ou email já cadastrado!');
+            return;
+          }
+        
+          const novoUsuario = {
+            login,
+            nome,
+            email,
+            senha,
+            tipo: "comum" 
+          };
+          
+          fetch('http://localhost:3000/usuarios', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(novoUsuario),
+          })
+          .then(response => response.json())
+          .then(data => {
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = 'login.html';
+          })
+          .catch(error => {
+            console.error('Erro ao cadastrar:', error);
+            alert('Erro ao cadastrar. Tente novamente.');
+          });
+        })
+        .catch(error => {
+          console.error('Erro ao verificar usuários:', error);
+          alert('Erro ao verificar usuários. Tente novamente.');
+        });
+    });
+  }
+});
+</script>
+
+  <script src="assets/scripts/login.js"></script>
+  <script src="https://kit.fontawesome.com/8bfa04bd65.js" crossorigin="anonymous"></script>
+</body>
+</html>
